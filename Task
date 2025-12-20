@@ -1,0 +1,228 @@
+# OOP Concepts: Abstraction, Inheritance, Polymorphism, Encapsulation
+
+
+##Qn 1: play(on tv, on mobile, on tablet) 
+
+# from abc import ABC, abstractmethod
+
+# # Abstraction
+
+# class Device(ABC):
+
+#     def __init__(self, volume):
+#         # Encapsulation (private variable)
+#         self.__volume = volume  
+
+#     # Encapsulated method
+#     def get_volume(self):
+#         return self.__volume
+
+#     # Abstract method
+#     @abstractmethod
+#     def play(self):
+#         pass
+
+# # Inheritance
+
+# class TV(Device):
+#     def play(self):
+#         print(f"Playing on TV at volume {self.get_volume()}")
+
+
+# class Mobile(Device):
+#     def play(self):
+#         print(f"Playing on Mobile at volume {self.get_volume()}")
+
+
+# class Tablet(Device):
+#     def play(self):
+#         print(f"Playing on Tablet at volume {self.get_volume()}")
+
+
+
+# # Polymorphism
+
+# devices = [
+#     TV(50),
+#     Mobile(30),
+#     Tablet(40)
+# ]
+
+# for device in devices:
+#     device.play()
+
+
+
+# #Qn 2: create a payment gateway . Every payment must have pay(amount)-> method can be done(card,upi,bank) 
+
+# from abc import ABC, abstractmethod
+
+
+# # Abstraction
+
+# class Payment(ABC):
+
+#     def __init__(self, amount):
+#         # Encapsulation (private variable)
+#         self.__amount = amount
+
+#     # Encapsulated method
+#     def get_amount(self):
+#         return self.__amount
+
+#     # Abstract method
+#     @abstractmethod
+#     def pay(self):
+#         pass
+
+
+
+# # Inheritance
+
+# class CardPayment(Payment):
+#     def pay(self):
+#         print(f"Paid ₹{self.get_amount()} using Card")
+
+
+# class UPIPayment(Payment):
+#     def pay(self):
+#         print(f"Paid ₹{self.get_amount()} using UPI")
+
+
+# class BankPayment(Payment):
+#     def pay(self):
+#         print(f"Paid ₹{self.get_amount()} using Bank Transfer")
+
+
+
+# # Polymorphism
+
+# payments = [
+#     CardPayment(1500),
+#     UPIPayment(800),
+#     BankPayment(5000)
+# ]
+
+# for payment in payments:
+#     payment.pay()
+
+
+
+# #Qn 3: A company sends Notification in different ways .Use: send (message) through whatsapp,email,sms
+
+
+# from abc import ABC, abstractmethod
+
+
+# # Abstraction
+
+# class Notification(ABC):
+
+#     def __init__(self, sender):
+#         # Encapsulation (private variable)
+#         self.__sender = sender
+
+#     # Encapsulated method
+#     def get_sender(self):
+#         return self.__sender
+
+#     # Abstract method
+#     @abstractmethod
+#     def send(self, message):
+#         pass
+
+
+
+# # Inheritance
+
+# class WhatsAppNotification(Notification):
+#     def send(self, message):
+#         print(f"WhatsApp from {self.get_sender()}: {message}")
+
+
+# class EmailNotification(Notification):
+#     def send(self, message):
+#         print(f"Email from {self.get_sender()}: {message}")
+
+
+# class SMSNotification(Notification):
+#     def send(self, message):
+#         print(f"SMS from {self.get_sender()}: {message}")
+
+
+
+# # Polymorphism
+
+# notifications = [
+#     WhatsAppNotification("ABC Company"),
+#     EmailNotification("ABC Company"),
+#     SMSNotification("ABC Company")
+# ]
+
+# message = "Your OTP is 4829. Do not share it with anyone."
+
+# for notify in notifications:
+#     notify.send(message)
+
+
+
+# #QN 4: ATM machine with withdraw, deposit, check_balance methods
+
+
+# from abc import ABC, abstractmethod
+
+
+# # Abstraction
+
+# class ATM(ABC):
+
+#     @abstractmethod
+#     def withdraw(self, amount):
+#         pass
+
+#     @abstractmethod
+#     def deposit(self, amount):
+#         pass
+
+#     @abstractmethod
+#     def check_balance(self):
+#         pass
+
+
+
+# # Inheritance
+
+# class BankAccount(ATM):
+#     def __init__(self, account_number, balance=0):
+#         # Encapsulation (private balance)
+#         self.__balance = balance
+#         self.account_number = account_number
+
+#     def withdraw(self, amount):
+#         if amount > self.__balance:
+#             print("Insufficient balance")
+#         else:
+#             self.__balance -= amount
+#             print(f"Withdrawn ₹{amount} successfully")
+
+#     def deposit(self, amount):
+#         self.__balance += amount
+#         print(f"Deposited ₹{amount} successfully")
+
+#     def check_balance(self):
+#         print(f"Your current balance is: ₹{self.__balance}")
+
+
+
+# # Polymorphism
+
+# account = BankAccount("1234567890", 5000)
+
+# # Test operations
+# account.check_balance()
+# account.withdraw(1500)
+# account.check_balance()
+# account.deposit(2000)
+# account.check_balance()
+
+

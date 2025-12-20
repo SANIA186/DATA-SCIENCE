@@ -244,4 +244,142 @@
 
 
 
+# #705 Design HashSet
+# class MyHashSet(object):
+
+#     def __init__(self):
+#         self.arr =[False]*1000001
+        
+
+#     def add(self, key):
+#         self.arr[key] = True
+#         """
+#         :type key: int
+#         :rtype: None
+#         """
+        
+
+#     def remove(self, key):
+#         self.arr[key] = False
+#         """
+#         :type key: int
+#         :rtype: None
+#         """
+        
+
+#     def contains(self, key):
+#         return self.arr[key]
+#         """
+#         :type key: int
+#         :rtype: bool
+#         """
+        
+
+
+# # Your MyHashSet object will be instantiated and called as such:
+# # obj = MyHashSet()
+# # obj.add(key)
+# # obj.remove(key)
+# # param_3 = obj.contains(key)
+
+
+
+
+# #58 Length of Last Word
+# class Solution(object):
+#     def lengthOfLastWord(self, s):
+#         """
+#         :type s: str
+#         :rtype: int
+#         """
+#         words = s.strip().split()
+#         return len(words[-1])
+
+
+
+# #1732 Find the Highest Altitude
+# class Solution(object):
+#     def largestAltitude(self, gain):
+#         """
+#         :type gain: List[int]
+#         :rtype: int
+#         """
+#         alt= max_alt =0
+#         for g in gain:
+#             alt+= g
+#             max_alt= max(max_alt,alt)
+#         return max_alt
+
+
+# #1295. Find Numbers with Even Number of Digits
+# class Solution(object):
+#     def findNumbers(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         count=0
+#         for i in range (len(nums)):
+#             n=nums[i]
+#             digit=0
+#             while n>0:
+#                 digit+=1
+#                 n=n//10
+#             if digit%2==0:
+#                 count+=1
+#         return count
+       
+
+# #1431 Kids With the Greatest Number of Candies
+# import numpy as np
+# class Solution(object):
+#     def kidsWithCandies(self, candies, extraCandies):
+#         """
+#         :type candies: List[int]
+#         :type extraCandies: int
+#         :rtype: List[bool]
+#         """
+#         arr = np.array(candies)
+#         max_candies= arr.max()
+#         x= (arr+extraCandies)>= max_candies
+#         return x.tolist()
+
+
+
+# #2114 Maximum Number of Words Found in Sentences
+# import numpy as np
+# class Solution(object):
+#     def mostWordsFound(self, sentences):
+#         """
+#         :type sentences: List[str]
+#         :rtype: int
+#         """
+#         arr= np.array(sentences)
+#         count=0
+#         count=np.char.count(arr,' ')+1
+#         return count.max()
+
+
+# #709 To Lower Case
+# class Solution(object):
+#     def toLowerCase(self, s):
+#         """
+#         :type s: str
+#         :rtype: str
+#         """
+#         return s.lower()
+
+
+# #344 Reverse String
+# import numpy as np
+# class Solution(object):
+#     def reverseString(self, s):
+#         """
+#         :type s: List[str]
+#         :rtype: None Do not return anything, modify s in-place instead.
+#         """
+        
+#         arr= np.array(s)
+#         arr=arr[::-1]
+#         s[:]= arr.tolist()
 
